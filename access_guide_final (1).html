@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アクセス案内 | TikTok Shop クリエイター実践サミット2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f5f5f5;
+    --card: #ffffff;
+    --card2: #f9f9f9;
+    --border: #e8e8e8;
+    --text: #111111;
+    --muted: #666;
+    --hint: #aaa;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes logoSlide {
+    from { opacity: 0; transform: translateX(-12px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes badgePop {
+    0%   { opacity: 0; transform: scale(0.7); }
+    70%  { transform: scale(1.08); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes stepReveal {
+    from { opacity: 0; transform: translateX(-8px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes lineGrow {
+    from { transform: scaleY(0); }
+    to   { transform: scaleY(1); }
+  }
+  @keyframes dotPop {
+    0%   { transform: scale(0); }
+    60%  { transform: scale(1.15); }
+    100% { transform: scale(1); }
+  }
+  @keyframes arriveGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(123,92,232,0); }
+    50%       { box-shadow: 0 0 0 6px rgba(123,92,232,0.15); }
+  }
+  @keyframes pulseBtn {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.015); }
+  }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--bg);
+    min-height: 100vh;
+    padding: 20px 16px 40px;
+  }
+  .outer { max-width: 480px; margin: 0 auto; }
+
+  /* HEADER */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 18px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 18px;
+    animation: fadeIn 0.5s ease both;
+  }
+  .logo-img {
+    height: 30px;
+    animation: logoSlide 0.6s ease both 0.1s;
+  }
+  .event-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #7B5CE8, #4A90D9);
+    color: #fff;
+    letter-spacing: 0.03em;
+    animation: badgePop 0.5s ease both 0.3s;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 14px;
+    text-align: center;
+    animation: fadeUp 0.55s ease both 0.2s;
+  }
+  .hero h1 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+    line-height: 1.6;
+  }
+  .hero .venue { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .meta-row { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .meta-pill {
+    display: flex; flex-direction: column; align-items: center;
+    background: var(--card2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 8px 14px; min-width: 72px;
+  }
+  .meta-pill .mlabel { font-size: 9px; color: var(--hint); letter-spacing: 0.05em; margin-bottom: 2px; }
+  .meta-pill .mval { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  /* SECTION LABEL */
+  .sec-label {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
+    color: var(--hint); text-transform: uppercase;
+    margin-bottom: 10px; padding: 0 2px;
+    animation: fadeIn 0.4s ease both 0.4s;
+  }
+
+  /* ROUTE CARDS */
+  .route-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .route-card:nth-child(1) { animation: fadeUp 0.5s ease both 0.45s; }
+  .route-card:nth-child(2) { animation: fadeUp 0.5s ease both 0.55s; }
+  .route-card:nth-child(3) { animation: fadeUp 0.5s ease both 0.65s; }
+
+  .card-head {
+    padding: 13px 16px;
+    display: flex; align-items: center; gap: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .line-dot {
+    width: 30px; height: 30px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; flex-shrink: 0; color: #fff;
+    animation: dotPop 0.4s ease both 0.6s;
+  }
+  .card-head .ctitle { font-size: 13px; font-weight: 700; color: var(--text); flex: 1; }
+  .time-badge { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+
+  /* STEPS */
+  .steps { padding: 4px 16px 16px; }
+  .step-row { display: flex; gap: 12px; }
+  .step-l { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 26px; }
+  .sdot {
+    width: 26px; height: 26px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .sline {
+    width: 1.5px; flex-grow: 1; min-height: 10px;
+    transform-origin: top;
+  }
+  .sbody { flex: 1; padding: 6px 0 14px; }
+  .slabel { font-size: 13px; font-weight: 700; color: var(--text); }
+  .sdesc { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.6; }
+  .sdur { font-size: 10px; color: var(--hint); margin-top: 3px; }
+
+  .arrive-box {
+    border-radius: 10px; padding: 10px 14px; margin-top: 4px;
+    animation: arriveGlow 2.5s ease-in-out infinite 1.2s;
+  }
+  .arrive-box .afloor { font-size: 26px; font-weight: 700; line-height: 1; color: #fff; }
+  .arrive-box .aname { font-size: 11px; color: rgba(255,255,255,0.75); margin-top: 3px; }
+
+  /* animate steps when card is in view */
+  .route-card .step-row { opacity: 0; }
+  .route-card.revealed .step-row:nth-child(1) { animation: stepReveal 0.35s ease forwards 0.05s; }
+  .route-card.revealed .step-row:nth-child(2) { animation: stepReveal 0.35s ease forwards 0.15s; }
+  .route-card.revealed .step-row:nth-child(3) { animation: stepReveal 0.35s ease forwards 0.25s; }
+  .route-card.revealed .step-row:nth-child(4) { animation: stepReveal 0.35s ease forwards 0.35s; }
+  .route-card.revealed .sline { animation: lineGrow 0.4s ease forwards 0.1s; }
+  .route-card.revealed .sdot  { animation: dotPop  0.3s ease forwards 0.05s; }
+
+  /* QR */
+  .qr-card {
+    background: #FFFBEB; border: 1px solid #FCD34D;
+    border-radius: 14px; padding: 14px;
+    display: flex; gap: 12px; margin-bottom: 12px;
+    animation: fadeUp 0.5s ease both 0.8s;
+  }
+  .qr-ico {
+    width: 34px; height: 34px; background: #FEF3C7;
+    border-radius: 8px; display: flex; align-items: center;
+    justify-content: center; font-size: 18px; flex-shrink: 0;
+  }
+  .qr-t { font-size: 12px; font-weight: 700; color: #92400E; margin-bottom: 4px; }
+  .qr-b { font-size: 11px; color: #B45309; line-height: 1.6; }
+
+  /* MAP BTN */
+  .map-btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; padding: 13px;
+    background: linear-gradient(135deg, #7B5CE8, #4A90D9);
+    color: #fff; border: none; border-radius: 12px;
+    font-size: 14px; font-weight: 700;
+    text-decoration: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-bottom: 20px;
+    animation: fadeUp 0.5s ease both 0.9s, pulseBtn 3s ease-in-out infinite 1.5s;
+    transition: opacity 0.15s;
+  }
+  .map-btn:hover { opacity: 0.88; }
+  .map-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+  .footer {
+    text-align: center; font-size: 10px; color: var(--hint);
+    line-height: 1.8; border-top: 1px solid var(--border); padding-top: 16px;
+    animation: fadeIn 0.5s ease both 1s;
+  }
+
+  @media (max-width: 400px) {
+    body { padding: 12px 12px 32px; background: #fff; }
+    .route-card, .hero { border-radius: 12px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="outer">
+
+  <div class="header">
+    <img class="logo-img" src="data:image/png;base64,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" alt="TikSeek">
+    <div class="event-badge">EVENT</div>
+  </div>
+
+  <div class="hero">
+    <h1>TikTok Shop クリエイター実践サミット2026<br>会場へのアクセス</h1>
+    <div class="venue">AnyMind Japan 株式会社・六本木ヒルズ森タワー 30F</div>
+    <div class="meta-row">
+      <div class="meta-pill"><div class="mlabel">日付</div><div class="mval">6/7（日）</div></div>
+      <div class="meta-pill"><div class="mlabel">受付開始</div><div class="mval">13:00</div></div>
+      <div class="meta-pill"><div class="mlabel">開始</div><div class="mval">13:30</div></div>
+      <div class="meta-pill"><div class="mlabel">参加費</div><div class="mval">無料</div></div>
+    </div>
+  </div>
+
+  <div class="sec-label">最寄り駅からのルート</div>
+
+  <!-- TAB SWITCHER -->
+  <div style="margin-bottom:14px;">
+    <div style="display:flex; gap:6px; margin-bottom:12px; flex-wrap:wrap;">
+      <button id="tab-hibiya" onclick="switchTab('hibiya')" style="flex:1;min-width:0;padding:8px 6px;font-size:11px;font-weight:700;border-radius:10px;border:none;background:#1565C0;color:#fff;cursor:pointer;font-family:'Noto Sans JP',sans-serif;">日比谷線<br><span style="font-weight:400;font-size:10px;">六本木駅</span></button>
+      <button id="tab-oedo1" onclick="switchTab('oedo1')" style="flex:1;min-width:0;padding:8px 6px;font-size:11px;font-weight:700;border-radius:10px;border:1px solid #e8e8e8;background:#fff;color:#880E4F;cursor:pointer;font-family:'Noto Sans JP',sans-serif;">大江戸線<br><span style="font-weight:400;font-size:10px;">六本木駅</span></button>
+      <button id="tab-oedo2" onclick="switchTab('oedo2')" style="flex:1;min-width:0;padding:8px 6px;font-size:11px;font-weight:700;border-radius:10px;border:1px solid #e8e8e8;background:#fff;color:#6A1B9A;cursor:pointer;font-family:'Noto Sans JP',sans-serif;">大江戸線<br><span style="font-weight:400;font-size:10px;">麻布十番駅</span></button>
+    </div>
+
+    <!-- 日比谷線 -->
+    <div id="pane-hibiya" class="route-pane">
+      <div class="route-card">
+        <div class="card-head" style="background:#EFF6FF;">
+          <div class="line-dot" style="background:#1565C0;">M</div>
+          <div class="ctitle">東京メトロ日比谷線「六本木駅」</div>
+          <div class="time-badge" style="background:#DBEAFE; color:#1E40AF;">約3分</div>
+        </div>
+        <div class="steps">
+          <div class="step-row"><div class="step-l"><div class="sdot" style="background:#1565C0;color:#fff;">1C</div><div class="sline" style="background:#BFDBFE;"></div></div><div class="sbody"><div class="slabel">1C出口を出る</div><div class="sdesc">コンコース直結。改札を出たらそのまま1C出口の案内板へ</div></div></div>
+          <div class="step-row"><div class="step-l"><div class="sdot" style="background:#EFF6FF;color:#1565C0;border:1px solid #BFDBFE;">🚶</div><div class="sline" style="background:#BFDBFE;"></div></div><div class="sbody"><div class="slabel">メトロハットを抜けて直進</div><div class="sdesc">地上に出たらヒルズの案内板に沿って進む。66プラザを正面に見ながら森タワーへ</div><div class="sdur">⏱ 徒歩 約2〜3分</div></div></div>
+          <div class="step-row"><div class="step-l"><div class="sdot" style="background:#EFF6FF;color:#1565C0;border:1px solid #BFDBFE;">🏢</div><div class="sline" style="background:#BFDBFE;"></div></div><div class="sbody"><div class="slabel">森タワー 1F ロビーに入館</div><div class="sdesc">QRコードをセキュリティゲートにかざして入場</div></div></div>
+          <div class="step-row"><div class="step-l"><div class="sdot" style="background:#1565C0;color:#fff;">✓</div></div><div class="sbody"><div class="arrive-box" style="background:#1565C0;"><div class="afloor">30F</div><div class="aname">AnyMind Japan 株式会社</div></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 大江戸線 六本木 -->
+    <div id="pane-oedo1" class="route-pane" style="display:none;">
+      <div class="route-card">
+        <div class="card-head" style="background:#FDF2F8;">
+          <div class="line-dot" style="background:#880E4F;">E</div>
+          <div class="ctitle">都営大江戸線「六本木駅」</div>
+          <div class="time-badge" style="background:#FCE7F3; color:#9D174D;">約6分</div>
+        </div>
+        <div class="steps">
+          <div class="step-row"><div class="step-l"><div class="sdot" style="background:#880E4F;color:#fff;">3</div><div class="sline" style="background:#FBCFE8;"></div></div><div class="sbody"><div class="slabel">3番出口から地上へ</div><div class="sdesc">大江戸線は地下深い。エスカレーターを乗り継いで地上へ出る</div><div class="sdur">⏱ 出口まで 約3〜4分</div></div></div>
+          <div class="step-row"><div class="step-l"><div class="sdot" style="background:#FDF2F8;color:#880E4F;border:1px solid #FBCFE8;">🚶</div><div class="sline" style="background:#FBCFE8;"></div></div><div class="sbody"><div class="slabel">出口を出て右方向へ</div><div class="sdesc">六本木ヒルズの案内板に沿って進む。坂を上がると森タワーが見える</div><div class="sdur">⏱ 徒歩 約6分</div></div></div>
+          <div class="step-row"><div class="step-l"><div class="sdot" style="background:#FDF2F8;color:#880E4F;border:1px solid #FBCFE8;">🏢</div><div class="sline" style="background:#FBCFE8;"></div></div><div class="sbody"><div class="slabel">森タワー 1F ロビーに入館</div><div class="sdesc">QRコードをセキュリティゲートにかざして入場</div></div></div>
+          <div class="step-row"><div class="step-l"><div class="sdot" style="background:#880E4F;color:#fff;">✓</div></div><div class="sbody"><div class="arrive-box" style="background:#880E4F;"><div class="afloor">30F</div><div class="aname">AnyMind Japan 株式会社</div></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 大江戸線 麻布十番 -->
+    <div id="pane-oedo2" class="route-pane" style="display:none;">
+      <div class="route-card">
+        <div class="card-head" style="background:#F5F3FF;">
+          <div class="line-dot" style="background:#6A1B9A;">E</div>
+          <div class="ctitle">都営大江戸線「麻布十番駅」</div>
+          <div class="time-badge" style="background:#EDE9FE; color:#5B21B6;">約9分</div>
+        </div>
+        <div class="steps">
+          <div class="step-row"><div class="step-l"><div class="sdot" style="background:#6A1B9A;color:#fff;">7</div><div class="sline" style="background:#DDD6FE;"></div></div><div class="sbody"><div class="slabel">7番出口から地上へ</div><div class="sdesc">六本木ヒルズ方面の出口。地上に出たら外苑東通り方向へ</div></div></div>
+          <div class="step-row"><div class="step-l"><div class="sdot" style="background:#F5F3FF;color:#6A1B9A;border:1px solid #DDD6FE;">🚶</div><div class="sline" style="background:#DDD6FE;"></div></div><div class="sbody"><div class="slabel">外苑東通りを北上</div><div class="sdesc">道なりに進み六本木ヒルズの案内板を目印に直進。坂を上がった先に森タワー</div><div class="sdur">⏱ 徒歩 約9分</div></div></div>
+          <div class="step-row"><div class="step-l"><div class="sdot" style="background:#F5F3FF;color:#6A1B9A;border:1px solid #DDD6FE;">🏢</div><div class="sline" style="background:#DDD6FE;"></div></div><div class="sbody"><div class="slabel">森タワー 1F ロビーに入館</div><div class="sdesc">QRコードをセキュリティゲートにかざして入場</div></div></div>
+          <div class="step-row"><div class="step-l"><div class="sdot" style="background:#6A1B9A;color:#fff;">✓</div></div><div class="sbody"><div class="arrive-box" style="background:#6A1B9A;"><div class="afloor">30F</div><div class="aname">AnyMind Japan 株式会社</div></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENTRY GUIDE SECTION -->
+  <div style="margin-bottom:14px;">
+    <div class="sec-label" style="animation:fadeIn 0.4s ease both 0.85s;">当日の受付について</div>
+
+    <!-- 受付カード -->
+    <div class="route-card" style="animation:fadeUp 0.5s ease both 0.9s; margin-bottom:12px;">
+      <div class="card-head" style="background:#F0FDF4;">
+        <div class="line-dot" style="background:#15803D; font-size:18px;">📋</div>
+        <div class="ctitle">LL階（改札前）受付にお越しください</div>
+      </div>
+      <div style="padding:14px 16px;">
+        <div style="font-size:13px;color:#111;line-height:1.8;margin-bottom:12px;">六本木ヒルズ森タワー <strong>LL階（改札前）の受付</strong> までお越しください。スタッフにお名前をお伝えいただき、入館証をお受け取りのうえご入館ください。</div>
+        <div style="background:#F0FDF4;border-radius:10px;padding:12px 14px;">
+          <div style="font-size:11px;color:#15803D;font-weight:700;margin-bottom:8px;">📌 受付のご案内</div>
+          <div style="font-size:12px;color:#166534;line-height:1.8;">
+            ・受付開始時間（13:00）以降にお越しください<br>
+            ・QRコードの発行はございません<br>
+            ・入館証はイベント終了後に回収いたします<br>
+            ・法人参加者様はお名刺を1枚ご持参ください
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 持ち物カード -->
+    <div class="route-card" style="animation:fadeUp 0.5s ease both 0.95s; margin-bottom:12px;">
+      <div class="card-head" style="background:#EFF6FF;">
+        <div class="line-dot" style="background:#1565C0; font-size:18px;">🎒</div>
+        <div class="ctitle">当日のご持参物</div>
+      </div>
+      <div style="padding:14px 16px;">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:120px;background:#EFF6FF;border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:22px;margin-bottom:6px;">📱</div>
+            <div style="font-size:12px;font-weight:700;color:#1E40AF;">スマートフォン</div>
+            <div style="font-size:10px;color:#3B82F6;margin-top:2px;">全員</div>
+          </div>
+          <div style="flex:1;min-width:120px;background:#EFF6FF;border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:22px;margin-bottom:6px;">🪪</div>
+            <div style="font-size:12px;font-weight:700;color:#1E40AF;">お名刺</div>
+            <div style="font-size:10px;color:#3B82F6;margin-top:2px;">法人参加者のみ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ご注意事項 -->
+    <div class="route-card" style="animation:fadeUp 0.5s ease both 1.0s; margin-bottom:12px;">
+      <div class="card-head" style="background:#FFFBEB;">
+        <div class="line-dot" style="background:#D97706; font-size:18px;">⚠️</div>
+        <div class="ctitle">ご注意事項</div>
+      </div>
+      <div style="padding:14px 16px;">
+        <div style="font-size:12px;color:#92400E;line-height:1.9;">
+          ・受付開始前のご来場はご遠慮ください<br>
+          ・途中入退場は可能です<br>
+          ・会場内で写真・動画撮影を行う場合がございます<br>
+          ・イベント内容は予告なく変更となる場合がございます
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="map-btn" href="https://maps.app.goo.gl/nfrfqGM79LsCHSAz5" target="_blank">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Google Mapsで開く
+  </a>
+
+  <div class="footer">
+    受付開始 13:00 ／ イベント開始 13:30 ／ 終了予定 18:00<br>
+    東京都港区六本木6-10-1 六本木ヒルズ森タワー30階<br>
+    主催：株式会社TikSeek
+  </div>
+</div>
+
+<script>
+
+function switchTab(id) {
+  const colors = { hibiya: '#1565C0', oedo1: '#880E4F', oedo2: '#6A1B9A' };
+  ['hibiya','oedo1','oedo2'].forEach(t => {
+    const pane = document.getElementById('pane-' + t);
+    const btn  = document.getElementById('tab-' + t);
+    if (t === id) {
+      pane.style.display = 'block';
+      btn.style.background = colors[t];
+      btn.style.color = '#fff';
+      btn.style.border = 'none';
+    } else {
+      pane.style.display = 'none';
+      btn.style.background = '#fff';
+      btn.style.color = colors[t];
+      btn.style.border = '1px solid #e8e8e8';
+    }
+  });
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('revealed');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.route-card').forEach(c => observer.observe(c));
+</script>
+</body>
+</html>
